@@ -3137,6 +3137,10 @@ if(window.\(JAVASCRIPT_BRIDGE_NAME)[\(_callHandlerID)] != null) {
             completionHandler(nil, nil)
         }
     }
+
+    public func requestFocus() {
+            self.scrollView.subviews.first?.becomeFirstResponder()
+    }
     
     public func clearFocus() {
         self.scrollView.subviews.first?.resignFirstResponder()

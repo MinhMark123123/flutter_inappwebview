@@ -2445,4 +2445,9 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
     throw UnimplementedError(
         'dispose is not implemented on the current platform');
   }
+
+  Future<void> requestFocus() {
+    throw UnimplementedError(
+        'requestFocus is not implemented on the current platform');
+  }
 }

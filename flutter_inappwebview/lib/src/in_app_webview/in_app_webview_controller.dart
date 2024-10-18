@@ -579,4 +579,7 @@ class InAppWebViewController {
   ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.dispose}
   void dispose({bool isKeepAlive = false}) =>
       platform.dispose(isKeepAlive: isKeepAlive);
+  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.requestFocus}
+  void requestFocus() =>
+      platform.requestFocus();
 }

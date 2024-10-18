@@ -52,12 +52,13 @@ import com.pichillilorenzo.flutter_inappwebview_android.webview.in_app_webview.I
 import com.pichillilorenzo.flutter_inappwebview_android.webview.in_app_webview.InAppWebViewSettings;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.web_message.WebMessageChannel;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.web_message.WebMessageListener;
-
+import android.util.Log;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.view.View;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -478,6 +479,13 @@ public class WebViewChannelDelegate extends ChannelDelegateImpl {
         if (webView != null) {
           Map<String, Object> contextMenu = (Map<String, Object>) call.argument("contextMenu");
           webView.setContextMenu(contextMenu);
+        }
+        result.success(true);
+        break;
+      case requestFocus:
+        if (webView != null) {
+          Log.d(LOG_TAG, "----------------------------- requestFocus" +( webView != null));
+          webView.requestFocus(View.FOCUS_DOWN | View.FOCUS_UP);
         }
         result.success(true);
         break;

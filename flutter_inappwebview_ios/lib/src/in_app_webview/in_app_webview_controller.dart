@@ -2227,7 +2227,11 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
     String? extra = hitTestResultMap["extra"];
     return InAppWebViewHitTestResult(type: type, extra: extra);
   }
-
+  @override
+  Future<void> requestFocus() async {
+    Map<String, dynamic> args = <String, dynamic>{};
+    return await channel?.invokeMethod('requestFocus', args);
+  }
   @override
   Future<void> clearFocus() async {
     Map<String, dynamic> args = <String, dynamic>{};
